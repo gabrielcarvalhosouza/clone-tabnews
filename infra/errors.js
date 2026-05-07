@@ -14,7 +14,7 @@ export class InternalServerError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
@@ -35,7 +35,28 @@ export class ServiceError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
+    };
+  }
+}
+
+export class ValidationError extends Error {
+  constructor({ cause, message, action }) {
+    super(message || "Um erro de validação ocorreu.", {
+      cause,
+    });
+
+    this.name = "ValidationError";
+    this.action = action || "Verifique se o serviço está disponível.";
+    this.statusCode = 400;
+  }
+
+  toJSON() {
+    return {
+      name: this.name,
+      message: this.message,
+      action: this.action,
+      status_code: this.statusCode,
     };
   }
 }
@@ -55,7 +76,7 @@ export class MethodNotAllowedError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
