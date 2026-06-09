@@ -79,9 +79,7 @@ describe("PATCH /api/v1/users/[username]", () => {
       });
 
       const activatedUser2 = await orchestrator.activateUser(createdUser2);
-      const sessionObject2 = await orchestrator.createSession(
-        activatedUser2,
-      );
+      const sessionObject2 = await orchestrator.createSession(activatedUser2);
 
       const response = await fetch(`${webserver.origin}/api/v1/users/user2`, {
         method: "PATCH",
@@ -115,9 +113,7 @@ describe("PATCH /api/v1/users/[username]", () => {
       });
 
       const activatedUserB = await orchestrator.activateUser(createdUserB);
-      const sessionObject2 = await orchestrator.createSession(
-        activatedUserB,
-      );
+      const sessionObject2 = await orchestrator.createSession(activatedUserB);
 
       const response = await fetch(`${webserver.origin}/api/v1/users/userA`, {
         method: "PATCH",
@@ -151,9 +147,7 @@ describe("PATCH /api/v1/users/[username]", () => {
       });
 
       const activatedUser2 = await orchestrator.activateUser(createdUser2);
-      const sessionObject2 = await orchestrator.createSession(
-        activatedUser2,
-      );
+      const sessionObject2 = await orchestrator.createSession(activatedUser2);
 
       const response = await fetch(
         `${webserver.origin}/api/v1/users/${createdUser2.username}`,
@@ -222,9 +216,7 @@ describe("PATCH /api/v1/users/[username]", () => {
         email: "uniqueEmail1@gmail.com",
       });
       const activatedUser1 = await orchestrator.activateUser(createdUser1);
-      const sessionObject1 = await orchestrator.createSession(
-        activatedUser1,
-      );
+      const sessionObject1 = await orchestrator.createSession(activatedUser1);
 
       const response = await fetch(
         `${webserver.origin}/api/v1/users/${createdUser1.username}`,
@@ -269,9 +261,7 @@ describe("PATCH /api/v1/users/[username]", () => {
         password: "newPassword1",
       });
       const activatedUser1 = await orchestrator.activateUser(createdUser1);
-      const sessionObject1 = await orchestrator.createSession(
-        activatedUser1,
-      );
+      const sessionObject1 = await orchestrator.createSession(activatedUser1);
 
       const response = await fetch(
         `${webserver.origin}/api/v1/users/${createdUser1.username}`,
